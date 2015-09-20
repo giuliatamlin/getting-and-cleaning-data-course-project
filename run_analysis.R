@@ -1,9 +1,8 @@
 library("dplyr")
 library("plyr")
 library("Hmisc")
-library("data.table")
 library("stringi")
-library("knitr")
+
 #get names and paths of files to read
 
 directory <- "./UCI HAR Dataset"
