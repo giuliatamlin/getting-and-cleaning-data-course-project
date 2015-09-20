@@ -69,7 +69,7 @@ rm(list = c("test_act","train_act","act_labels","subj_test","subj_train"))
 
 merged_data <- rbind(test_data,train_data)
 
-# row of columns to be kept
+# vector of columns to be kept
 
 vars <- which(stri_detect_fixed(names(test_data),"mean()") |
             stri_detect_fixed(names(test_data),"std()")|
@@ -87,8 +87,6 @@ new_data <- aggregate(. ~ activity + subject, merged_data, mean)
 
 write.table(new_data,"./new_data.txt",row.names = FALSE)
 
-# produce documentation
 
-knitr2html("codebook.Rmd")
 
 
