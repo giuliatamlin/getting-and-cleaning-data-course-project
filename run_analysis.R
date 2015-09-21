@@ -1,4 +1,4 @@
-library("dplyr")
+
 library("plyr")
 library("Hmisc")
 library("stringi")
@@ -80,7 +80,7 @@ merged_data <- merged_data[,vars]
 
 # create new data frame with the mean with respect to activity and subject
 
-new_data <- aggregate(. ~ activity + subject, merged_data, mean)
+new_data <- ddply(merged_data, c("activity","subject"),function(x) {colMeans(x[,1:66])})
 
 # write new dataframe to file
 
