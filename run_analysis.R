@@ -64,7 +64,7 @@ train_data$subject <- factor(train_data$subject, levels = c(1:30))
 # clear workspace of no longer needed dataframes
 rm(list = c("test_act","train_act","act_labels","subj_test","subj_train"))
 
-# merge data (using join as in this case both data sets have the same columns)
+# merge data (using rbind as in this case both data sets have the same columns)
 
 merged_data <- rbind(test_data,train_data)
 
